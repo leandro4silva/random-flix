@@ -43,7 +43,7 @@ export class Indication {
     }
 
     getRandomId(){
-        return (Math.random() * (800 - 400) + 400).toFixed(0);
+        return (Math.random() * (1000 - 100) + 100).toFixed(0);
     }
 
 }
@@ -70,7 +70,7 @@ export class IndicationView extends Indication {
         
             movieDetails.querySelector('.poster').src = `${IMG_URL}/${this.entry.poster_path}`
             movieDetails.querySelector('.title').textContent = this.entry.title
-            movieDetails.querySelector('.overview').textContent = this.entry.overview
+            movieDetails.querySelector('.overview').textContent = this.entry.overview || 'Nenhuma descrição'
             
             this.content.append(movieDetails)
         }
